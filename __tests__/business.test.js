@@ -14,6 +14,7 @@ describe('Dino', () => {
     let returnedMap = evalInput(leeter, dinoArray);
     for (const key of returnedMap.keys()) {
       if (key === leeter) {
+        
         return true;
       }
     }

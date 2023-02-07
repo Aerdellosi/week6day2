@@ -7,10 +7,13 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '',
   },
   devServer: {                 // new line
-    contentBase: './dist'      // new line
+    contentBase: './dist',      // new line
+    compress: true,
+    port: 9000
   },                           
   devtool: 'eval-source-map', 
   plugins: [
@@ -21,18 +24,44 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Shape Tracker',
       template: './src/index.html',
-      inject: 'body'
+      inject: 'body',
+      filename: ".dist/index.html"
     })
   ],
   module: {
     rules: [
+      {
+        test: /\.(gif|png|avif|jpe?g)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/images/'
+            }
+          }
+        ]
+      },
+      {
+        test:/\.html$/,
+        use: [
+          'html-loader'
+        ]
+      },
+  
+    
       {
         test: /\.css$/,
         use: [
           'style-loader',
           'css-loader'
         ]
-      }
+      },
+     
+     
+
+    
+    
     ]
   }
 };

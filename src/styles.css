@@ -1,0 +1,10 @@
+.toblock {
+  height: 400px;
+  position: fixed;
+  left: 500px;
+  display: none;
+}
+
+.hidden12 {
+  display: none;
+}

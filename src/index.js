@@ -8,11 +8,15 @@ function getDinoName() {
 
   request.addEventListener("loadend", function () {
     const response = JSON.parse(this.responseText);
+  
     if (this.status === 200) {
-        return response;
+      document.getElementById("hidden1").style.display = "block";
+     
+      return response;
       // printElements(response);
     } else {
-        console.log(response);
+
+
       // printError(this, response, city);
     }
   });
@@ -23,5 +27,6 @@ function getDinoName() {
 
 
 window.addEventListener("load", function () {
-  document.querySelector('form').addEventListener("click", getDinoName);
+  document.getElementById("form1").addEventListener("submit", getDinoName);
+
 });

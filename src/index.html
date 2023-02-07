@@ -5,12 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <p>Dino Game</p>
+    <h1>JAPANESE SUDDEN DEATH DINO SQUID GAME</h1>
+    <p>In this game of hangman, you are given the name of a dinosaur. <br> Please press the button below to get a random dino name and initialize the game.</p>
+    <form id="form1">
+      <button type="submit" class="btn-success" id="dino">GET NAMU</button>
+    </form>
+    <div class="hangmanDiv">
+      <img src="./assets/Drawing.sketchpad_(1).png" id="hidden1" alt="" class="toblock">
+      <img src="./assets/Drawing.sketchpad_(2).png" id="hidden2" alt="" class="toblock">
+      <img src="./assets/Drawing.sketchpad_(3).png" id="hidden3" alt="" class="toblock">
+      <img src="./assets/Drawing.sketchpad_(4).png" id="hidden4" alt="" class="toblock">
+      <img src="./assets/Drawing.sketchpad_(5).png" id="hidden5" alt="" class="toblock">
+      <img src="./assets/Drawing.sketchpad_(6).png" id="hidden6" alt="" class="toblock">
+      <img src="./assets/Drawing.sketchpad_(7).png" id="hidden7" alt="" class="toblock">
+    </div>
     <form>
-
-      <button type="submit" class="btn-success" id="dino">Get dino name for hangman game</button>
+      <label for="dinoletter">Guess letter:</label>
+      <input type="text" name="dinoLetter" id="dinoLetter">
+      <p class="hidden12">NAMU RECEIVED</p>
     </form>
   </body>
 </html>
