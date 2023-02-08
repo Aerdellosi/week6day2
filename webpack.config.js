@@ -11,7 +11,7 @@ module.exports = {
     publicPath: '',
   },
   devServer: {                 // new line
-    contentBase: './dist',      // new line
+    contentBase: path.join(__dirname, 'dist'),
     compress: true,
     port: 9000
   },                           
@@ -25,7 +25,7 @@ module.exports = {
       title: 'Shape Tracker',
       template: './src/index.html',
       inject: 'body',
-      filename: ".dist/index.html"
+      filename: "index.html"
     })
   ],
   module: {
